@@ -1,8 +1,12 @@
 #!/bin/bash
-
-echo $1
-string=$1
+ 
 goodPasswd=true
+if [ $1 = "-f" ];then
+      echo "Takw thwe psswd from file"
+      string=$(cat $2)
+   else
+      string=$1
+   fi
 # https://unix.stackexchange.com/questions/145150/verify-the-length-of-a-variable
 # Checking if there is at list 10 chars
 if [ ${#string} -ge 10 ]; then  echo     -e "\e[0;32m$1 good +10 char\e[0m"
