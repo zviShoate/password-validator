@@ -11,8 +11,8 @@ goodPasswd=true
 
 # https://unix.stackexchange.com/questions/145150/verify-the-length-of-a-variable
 # Checking if there is at list 10 chars
-if [ ${#string} -ge 10 ]; then echo "good"
-else echo "bad" ; goodPasswd=false
+if [ ${#string} -ge 10 ]; then  echo     -e "\e[0;32m$1 good +10 char\e[0m"
+else echo     -e "\e[0;31m$1:  bad -10 char \e[0m" ; goodPasswd=false 
 fi
 
 # Check if the argumanet conatain at list 1 number
@@ -36,7 +36,7 @@ if [[ $string =~ [A-Z] ]];then
    fi
 
 if [ $goodPasswd = true ]; then
-     echo "good"
+      echo    -e "\e[0;32m$1 good  pswort\e[0m"
    else
-      echo "not good"  
+    echo     -e "\e[0;31m$1: not good  pswort   \e[0m" ; goodPasswd=false 
    fi
