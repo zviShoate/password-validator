@@ -1,5 +1,5 @@
 #!/bin/bash
-  
+
 if [ $1 = "-f" ];then
       echo "Takw thwe psswd from file"
       string=$(cat $2)
